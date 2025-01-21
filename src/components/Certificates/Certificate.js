@@ -13,7 +13,9 @@ import PowerBIImage from "../../Assets/Certificates/powerbi.png";
 import CareerEssentialsImage from "../../Assets/Certificates/LLM.jpeg";
 import LLMImage from "../../Assets/Certificates/LLM2.jpeg";
 import AzureMLImage from "../../Assets/Certificates/azure_ml.png";
-import MLOPS from "../../Assets/Certificates/MLOPS.png"
+import MLOPS from "../../Assets/Certificates/MLOPS.png";
+import AICHackathon from "../../Assets/Certificates/aic_hackathon2024.png";
+import Hack2SkillsImage from "../../Assets/Certificates/Hack2skill-Certificate.png";
 
 function Certificates() {
   const certifications = [
@@ -35,7 +37,7 @@ function Certificates() {
     {
       title: "Machine Learning In Production",
       description: "DeepLearning.AI, Coursera, 2024",
-      imgPath:MLOPS ,
+      imgPath: MLOPS,
     },
     {
       title: "Mathematics for Machine Learning and Data Science Specialization",
@@ -69,6 +71,29 @@ function Certificates() {
     },
   ];
 
+  const hackathonCertificates = [
+    {
+      title: "AIC Hackathon 2024",
+      description: "Secured 3rd Position among Top 200 Teams in India as Solo Developer",
+      imgPath: AICHackathon,
+    },
+    {
+      title: "Smart India Hackathon 2024",
+      description: "Internal Winner, Selected for National Level Competition",
+      imgPath: "placeholder.png",
+    },
+    {
+      title: "Smart India Hackathon 2023",
+      description: "National Level Finalist",
+      imgPath: "placeholder.png",
+    },
+    {
+      title: "Hack2Skills Innovation Challenge",
+      description: "Recognition for Technical Excellence",
+      imgPath: Hack2SkillsImage,
+    },
+  ];
+
   return (
     <Container fluid className="certificate-section">
       <Particle />
@@ -79,8 +104,26 @@ function Certificates() {
         <p style={{ color: "white" }}>
           Here are some of my recent certifications and completed courses.
         </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
           {certifications.map((cert, index) => (
+            <Col md={4} className="certificate-card" key={index}>
+              <CertificateCard
+                imgPath={cert.imgPath}
+                title={cert.title}
+                description={cert.description}
+              />
+            </Col>
+          ))}
+        </Row>
+
+        <h2 className="certificate-heading" style={{ paddingTop: "20px" }}>
+          Hackathon <strong className="purple">Achievements</strong>
+        </h2>
+        <p style={{ color: "white" }}>
+          Recognition from competitive hackathons and innovation challenges.
+        </p>
+        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          {hackathonCertificates.map((cert, index) => (
             <Col md={4} className="certificate-card" key={index}>
               <CertificateCard
                 imgPath={cert.imgPath}
